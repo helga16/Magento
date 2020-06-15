@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Customer\Controller\Account\Edit"
+                type="Alevel\Rewrite\Controller\Rewrite\Index"/>
+    <type name="Alevel\RandomNumber\Provider\RandomNumberProvider">
+        <plugin name="Alevel\RandomNumber\Provider\RandomNumberProvider"
+                type="Alevel\Rewrite\Plugin\Provider\RandomNumberProviderPlugin"/>
+
+    </type>
+</config>
+
