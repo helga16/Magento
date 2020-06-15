@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="alevel" translate="label" sortOrder="200">
+            <label>Alevel</label>
+        </tab>
+        <section id="alevel" translate="label" type="text" sortOrder="910" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Mygeneral</label>
+            <tab>alevel</tab>
+            <resource>Alevel_RandomNumber::configuration</resource>
+            <group id="field_masks" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom input</label>
+                <field id="life_time" translate="label"  type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>custom label</label>
+                    <comment>general</comment>
+                </field>
+
+                <field id="default" translate="label comment"  type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>default</label>
+                    <comment>Test config</comment>
+                </field>
+                <field id="atom_eu_countries" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>All Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="enable" translate="label"  type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

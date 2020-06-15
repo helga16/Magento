@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Alevel_RandomNumber::menu"
+             title="My Menu" module="Alevel_RandomNumber" sortOrder="999"
+             resource="Alevel_RandomNumber::menu"/>
+        <add id="Alevel_RandomNumber::child1"
+             title="Observer Grid"
+             module="Alevel_RandomNumber"
+             sortOrder="10"
+             action="alevel_random_number/cart"
+             resource="Alevel_RandomNumber::child1"
+             parent="Alevel_RandomNumber::menu"/>
+        <add id="Alevel_RandomNumber::child2" title="Point two" module="Alevel_RandomNumber" sortOrder="11"
+             action="coupon/grid/index" resource="Alevel_RandomNumber::child2" parent="Alevel_RandomNumber::menu"/>
+        <add id="Alevel_RandomNumber::configuration" title="configuration" module="Alevel_RandomNumber" sortOrder="99"
+             parent="Alevel_RandomNumber::menu" action="adminhtml/system_config/edit/section/alevel"
+             resource="Alevel_RandomNumber::configuration"/>
+    </menu>
+</config>

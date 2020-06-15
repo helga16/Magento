@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_login">
+        <observer name="Alevel\RandomNumber\Observer\Login"
+                  instance="Alevel\RandomNumber\Observer\Login"/>
+    </event>
+    <event name="sales_quote_collect_totals_before">
+        <observer name="Alevel\RandomNumber\Observer\NoteOrder"
+                  instance="Alevel\RandomNumber\Observer\NoteOrder"/>
+    </event>
+</config>
