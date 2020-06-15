@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="level_quick_order_status" resource="default" engine="innodb" comment="level_quick_order_status">
+        <column xsi:type="int"
+                name="status_id"
+                unsigned="true"
+                padding="10"
+                nullable="false"
+                identity="true"
+                comment="status_id"/>
+        <column xsi:type="varchar"
+                name="label"
+                length="20"
+                nullable="false"
+                comment="label"/>
+        <constraint xsi:type="primary" referenceId = "PRIMARY">
+            <column name="status_id"/>
+        </constraint>
+    </table>
+    <table name="level_quick_order" resource="default" engine="innodb" comment="level_quick_order">
+        <column xsi:type="int"
+                name="order_id"
+                padding="10"
+                unsigned="true"
+                nullable="false"
+                identity="true"
+                comment="order_id"/>
+        <column xsi:type="varchar"
+                name="customer_name"
+                length="30"
+                nullable="false"
+                comment="customer_name"/>
+        <column xsi:type="varchar"
+                name="email"
+                length="50"
+                nullable="false"
+                comment="email"/>
+        <column xsi:type="int"
+                name="status_id"
+                unsigned="true"
+                padding="10"
+                nullable="false"
+                identity="false"
+                comment="status_id"/>
+              <constraint xsi:type="primary" referenceId = "PRIMARY">
+            <column name="order_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="level_quick_order_status_status_id"
+                    table="level_quick_order"
+                    column="status_id"
+                    referenceTable="level_quick_order_status"
+                    referenceColumn="status_id"
+                    onDelete="CASCADE"/>
+
+           </table>
+    <table name="ajax_order" resource="default" engine="innodb" comment="ajax_order">
+        <column xsi:type="int"
+                name="id"
+                unsigned="true"
+                padding="10"
+                nullable="false"
+                identity="true"
+                comment="id"/>
+        <column xsi:type="varchar"
+                name="label"
+                length="20"
+                nullable="false"
+                comment="label"/>
+        <constraint xsi:type="primary" referenceId = "PRIMARY">
+            <column name="id"/>
+        </constraint>
+          </table>
+    </schema>
+
+

@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var \Alevel\Orders\Block\OrderBlock $block
+ */
+?>
+<div class="ui-test" data-bind="scope: 'alevel-component'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout()?>
+        }
+    }
+</script>
+
